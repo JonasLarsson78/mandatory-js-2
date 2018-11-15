@@ -9,7 +9,7 @@ let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
 
 let result = document.querySelector("#result");
-let btn;
+
 let turn = "X";
 
 function onClick(e) {
@@ -46,6 +46,9 @@ function checkWinX(){
 	else if (btn3.value === "X" && btn5.value === "X" && btn7.value === "X"){
 	$ (result).text(vinstX);
 	}
+	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
+		$ (result).text("Ingen har vunnit.");
+	}
 }	
 
 function checkWinO(){
@@ -76,6 +79,7 @@ function checkWinO(){
 	else if (btn3.value === "O" && btn5.value === "O" && btn7.value === "O"){
 	$ (result).text(vinstY);
 	}
+	
 }		
 	
 function xo(x){
