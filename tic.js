@@ -85,7 +85,7 @@ function checkWinO(){
 function xo(x){
 		
 	if (x.value === " " && turn === "X"){
-		$ (x).attr("value", turn);
+		$(x).attr("value", turn);
 		$(x).css('background-color', 'red');
 		turn = "O";
 	}
