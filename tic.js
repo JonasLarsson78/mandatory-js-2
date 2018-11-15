@@ -1,3 +1,4 @@
+/* Selectors till alla knappar och resultat*/
 let btn1 = document.querySelector("#btn1");
 let btn2 = document.querySelector("#btn2");
 let btn3 = document.querySelector("#btn3");
@@ -7,9 +8,8 @@ let btn6 = document.querySelector("#btn6");
 let btn7 = document.querySelector("#btn7");
 let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
-
 let result = document.querySelector("#result");
-
+/* Vilket turn som börjar*/
 let turn = "X";
 
 function onClick(e) {
@@ -17,7 +17,7 @@ let element = e.target;
 xo(element);
 checkWinO();	
 checkWinX();	
-	
+/* Kollar X vinst*/	
 function checkWinX(){
 	
 	let vinstX = "Vinst till X !!";
@@ -58,7 +58,7 @@ function checkWinX(){
 		$ (result).text("Ingen har vunnit.");
 	}
 }	
-
+/* Kollar O vinst*/
 function checkWinO(){
 	
 	let vinstY = "Vinst till O !!";
@@ -97,7 +97,7 @@ function checkWinO(){
 	}
 	
 }		
-	
+/* Varannan X - O och stylar*/	
 function xo(x){
 		
 	if (x.value === " " && turn === "X"){
@@ -113,7 +113,7 @@ function xo(x){
 }
 	
 }
-
+/* Reset kanpp*/
 function newGame(){
 	let myButtons = document.querySelectorAll("input[type=button]");
 	for (let i = 0; i < myButtons.length; i++){
@@ -124,7 +124,7 @@ function newGame(){
 	turn = "X";
 	$ (result).text("Vem vinner ? X eller O.");
 }
-
+/* Stänger av så man inte kan klicka på fler när någon vunit*/
 function disabled(){
 	let myButtons = document.querySelectorAll("input[type=button]");
 	for (let i = 0; i < myButtons.length; i++){
