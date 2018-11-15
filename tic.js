@@ -111,4 +111,3 @@ myButton.addEventListener("click", onClick);
 }
 let restart = document.querySelector("#restart");
 restart.addEventListener("click", newGame);
-
