@@ -4,7 +4,7 @@
 	justify-content: center;
 }
 #item{
-	margin-top: 50px;
+	
 	text-align: center;
 }
 body{
@@ -13,11 +13,15 @@ body{
 }
 p{
 	color: white;
+	font-size: 50px;
+}
+#result{
+	color: white;
 	font-size: 30px;
 }
 input[type=button]{
-	width: 180px;
-	height: 180px;
+	width: 150px;
+	height: 150px;
 	font-size: 100px;
 	margin-bottom: 5px;
 	background-color: green;
