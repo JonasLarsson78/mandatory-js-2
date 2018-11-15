@@ -105,7 +105,7 @@ function newGame(){
 		$(myButtons[i]).css('background-color', '');
 	}
 	turn = "X";
-	$ (result).text("Vem vinner? X eller O.");
+	$ (result).text("Vem vinner ? X eller O.");
 }
 
 let myButtons = document.querySelectorAll("input[type=button]");
