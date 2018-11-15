@@ -24,27 +24,35 @@ function checkWinX(){
 	
 	if (btn1.value === "X" && btn2.value === "X" && btn3.value === "X"){
 	$ (result).text(vinstX);
+	disabled();	
 	}
 	else if (btn4.value === "X" && btn5.value === "X" && btn6.value === "X"){
 	$ (result).text(vinstX);
+	disabled();	
 	}
 	else if (btn7.value === "X" && btn8.value === "X" && btn9.value === "X"){
 	$ (result).text(vinstX);
+	disabled();
 	}
 	else if (btn1.value === "X" && btn4.value === "X" && btn7.value === "X"){
 	$ (result).text(vinstX);
+	disabled();	
 	}
 	else if (btn2.value === "X" && btn5.value === "X" && btn8.value === "X"){
 	$ (result).text(vinstX);
+	disabled();	
 	}
 	else if (btn3.value === "X" && btn6.value === "X" && btn9.value === "X"){
 	$ (result).text(vinstX);
+	disabled();
 	}
 	else if (btn1.value === "X" && btn5.value === "X" && btn9.value === "X"){
 	$ (result).text(vinstX);
+	disabled();
 	}
 	else if (btn3.value === "X" && btn5.value === "X" && btn7.value === "X"){
 	$ (result).text(vinstX);
+	disabled();
 	}
 	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
 		$ (result).text("Ingen har vunnit.");
@@ -57,27 +65,35 @@ function checkWinO(){
 	
 	if (btn1.value === "O" && btn2.value === "O" && btn3.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn4.value === "O" && btn5.value === "O" && btn6.value === "O"){
 	$ (result).text(vinstY);
+	disabled();
 	}
 	else if (btn7.value === "O" && btn8.value === "O" && btn9.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn1.value === "O" && btn4.value === "O" && btn7.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn2.value === "O" && btn5.value === "O" && btn8.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn3.value === "O" && btn6.value === "O" && btn9.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn1.value === "O" && btn5.value === "O" && btn9.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	else if (btn3.value === "O" && btn5.value === "O" && btn7.value === "O"){
 	$ (result).text(vinstY);
+	disabled();	
 	}
 	
 }		
@@ -86,12 +102,12 @@ function xo(x){
 		
 	if (x.value === " " && turn === "X"){
 		$(x).attr("value", turn);
-		$(x).css('background-color', 'red');
+		$(x).css("background-color", "red");
 		turn = "O";
 	}
 	if (x.value === " " && turn === "O"){
 		$ (x).attr("value", turn);
-		$(x).css('background-color', 'blue');
+		$(x).css("background-color", "blue");
 		turn = "X";
 	}
 }
@@ -102,10 +118,18 @@ function newGame(){
 	let myButtons = document.querySelectorAll("input[type=button]");
 	for (let i = 0; i < myButtons.length; i++){
 		$(myButtons[i]).attr("value", " ");
-		$(myButtons[i]).css('background-color', '');
+		$(myButtons[i]).css("background-color", "");
+		$(myButtons[i]).removeAttr("disabled");
 	}
 	turn = "X";
 	$ (result).text("Vem vinner ? X eller O.");
+}
+
+function disabled(){
+	let myButtons = document.querySelectorAll("input[type=button]");
+	for (let i = 0; i < myButtons.length; i++){
+		$(myButtons[i]).attr("disabled", "disabled");
+	}
 }
 
 let myButtons = document.querySelectorAll("input[type=button]");
