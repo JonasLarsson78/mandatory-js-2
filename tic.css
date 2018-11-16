@@ -12,8 +12,19 @@ body{
 	font-family: 'Lato', sans-serif;
 }
 p{
-	color: white;
+	color: red;
 	font-size: 50px;
+	
+}
+span{
+	color: white;
+	font-size: 30px;
+}
+#red{
+	color: red;
+}
+#blue{
+	color: blue;
 }
 #result{
 	color: white;

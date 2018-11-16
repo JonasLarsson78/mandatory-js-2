@@ -9,8 +9,13 @@ let btn7 = document.querySelector("#btn7");
 let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
 let result = document.querySelector("#result");
+let scoreXX = document.querySelector("#scoreX");
+let scoreOO = document.querySelector("#scoreO");
 /* Vilket turn som börjar*/
 let turn = "X";
+
+let scoreO = 0;
+let scoreX = 0;
 
 function onClick(e) {
 let element = e.target;
@@ -20,39 +25,39 @@ checkWinX();
 /* Kollar X vinst*/	
 function checkWinX(){
 	
+	
 	let vinstX = "Vinst till X !!";
 	
+	function winX(){
+		$ (result).text(vinstX);
+		scoreX++;
+		$ (scoreXX).text(scoreX);
+		disabled();	
+	}
+	
 	if (btn1.value === "X" && btn2.value === "X" && btn3.value === "X"){
-	$ (result).text(vinstX);
-	disabled();	
+	winX();	
 	}
 	else if (btn4.value === "X" && btn5.value === "X" && btn6.value === "X"){
-	$ (result).text(vinstX);
-	disabled();	
+	winX();	
 	}
 	else if (btn7.value === "X" && btn8.value === "X" && btn9.value === "X"){
-	$ (result).text(vinstX);
-	disabled();
+	winX();
 	}
 	else if (btn1.value === "X" && btn4.value === "X" && btn7.value === "X"){
-	$ (result).text(vinstX);
-	disabled();	
+	winX();	
 	}
 	else if (btn2.value === "X" && btn5.value === "X" && btn8.value === "X"){
-	$ (result).text(vinstX);
-	disabled();	
+	winX();	
 	}
 	else if (btn3.value === "X" && btn6.value === "X" && btn9.value === "X"){
-	$ (result).text(vinstX);
-	disabled();
+	winX();
 	}
 	else if (btn1.value === "X" && btn5.value === "X" && btn9.value === "X"){
-	$ (result).text(vinstX);
-	disabled();
+	winX();
 	}
 	else if (btn3.value === "X" && btn5.value === "X" && btn7.value === "X"){
-	$ (result).text(vinstX);
-	disabled();
+	winX();
 	}
 	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
 		$ (result).text("Ingen har vunnit.");
@@ -61,39 +66,39 @@ function checkWinX(){
 /* Kollar O vinst*/
 function checkWinO(){
 	
+	
 	let vinstY = "Vinst till O !!";
 	
+	function winO(){
+		$ (result).text(vinstY);
+		scoreO++;
+		$ (scoreOO).text(scoreO);
+		disabled();	
+	}
+	
 	if (btn1.value === "O" && btn2.value === "O" && btn3.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();
 	}
 	else if (btn4.value === "O" && btn5.value === "O" && btn6.value === "O"){
-	$ (result).text(vinstY);
-	disabled();
+	winO();
 	}
 	else if (btn7.value === "O" && btn8.value === "O" && btn9.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();	
 	}
 	else if (btn1.value === "O" && btn4.value === "O" && btn7.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();	
 	}
 	else if (btn2.value === "O" && btn5.value === "O" && btn8.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();	
 	}
 	else if (btn3.value === "O" && btn6.value === "O" && btn9.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();	
 	}
 	else if (btn1.value === "O" && btn5.value === "O" && btn9.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();	
 	}
 	else if (btn3.value === "O" && btn5.value === "O" && btn7.value === "O"){
-	$ (result).text(vinstY);
-	disabled();	
+	winO();
 	}
 	
 }		
