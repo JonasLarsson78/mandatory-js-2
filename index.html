@@ -11,15 +11,16 @@
   <body>
 	   <div id="continer">
 		   <div id="item">
-			  <p>Tic Tac Toe</p>
-			   <span id="red">Röd vinst </span>
+			   <span class="red">Röd vinst </span>
 			   <span> - </span>
 			   <span id="scoreX">0</span>
 			   <span> - </span>
 			   <span id="scoreO">0</span>
 			   <span> - </span>
-			   <span id="blue"> Blå vinst</span><br><br>
+			   <span class="blue"> Blå vinst</span><br><br>
 			   <button id="scoreReset" onClick="resetScore()">Återställ poäng</button><br><br>
+			   <input id="radioX" type="radio" name="gender" value="X" checked><span class="red"> X</span> 
+  			   <input id="radioO" type="radio" name="gender" value="O"><span class="blue"> O </span><br><br><button  onClick="begin()" id="btnXO">Välj vem som börjar</button><br><br>
 			  <input type="button" id="btn1" value=" ">
 			  <input type="button" id="btn2" value=" ">
 			  <input type="button" id="btn3" value=" "><br>

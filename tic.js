@@ -8,15 +8,19 @@ let btn6 = document.querySelector("#btn6");
 let btn7 = document.querySelector("#btn7");
 let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
+let radioX = document.querySelector("#radioX");
+let radioO = document.querySelector("#radioO");
 let result = document.querySelector("#result");
 let scoreXX = document.querySelector("#scoreX");
 let scoreOO = document.querySelector("#scoreO");
 /* Vilket turn som börjar*/
-let turn = "X";
+let turn = "";
 
 let scoreO = 0;
 let scoreX = 0;
 
+begin();
+/*Kör spelet*/
 function onClick(e) {
 let element = e.target;
 xo(element);
@@ -64,7 +68,6 @@ function checkWinX(){
 }	
 /* Kollar O vinst*/
 function checkWinO(){
-	
 	
 	let vinstY = "Vinst till O !!";
 	
@@ -115,7 +118,6 @@ function xo(x){
 		turn = "X";
 	}
 }
-	
 }
 /* Reset kanpp*/
 function newGame(){
@@ -125,7 +127,7 @@ function newGame(){
 		$(myButtons[i]).css("background-color", "");
 		$(myButtons[i]).removeAttr("disabled");
 	}
-	turn = "X";
+	begin();
 	$ (result).text("Vem vinner ? X eller O.");
 }
 /* Stänger av så man inte kan klicka på fler när någon vunit*/
@@ -135,12 +137,21 @@ function disabled(){
 		$(myButtons[i]).attr("disabled", "disabled");
 	}
 }
-
+/* Nollsäller poäng*/
 function resetScore(){
 	scoreO = 0;
 	scoreX = 0;
 	$ (scoreXX).text(scoreX);
 	$ (scoreOO).text(scoreO);
+}
+/* Väljer vem som börjar*/
+function begin(){
+	if (radioO.checked){
+		turn = "O";
+	}
+	else if (radioX.checked){
+		turn = "X";
+	}
 }
 
 let myButtons = document.querySelectorAll("input[type=button]");

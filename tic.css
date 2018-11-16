@@ -12,8 +12,7 @@ body{
 }
 p{
 	color: red;
-	font-size: 40px;
-	
+	font-size: 30px;
 }
 #scoreReset{
 	width: 120px;
@@ -25,19 +24,35 @@ p{
 	box-shadow: 10px 10px 5px 0px black;
 	cursor: pointer;
 }
+#scoreReset:hover{
+	background: #FF585B;
+}
 span{
 	color: white;
-	font-size: 30px;
+	font-size: 25px;
 }
-#red{
+.red{
 	color: red;
 }
-#blue{
+.blue{
 	color: blue;
 }
 #result{
 	color: white;
 	font-size: 30px;
+}
+#btnXO{
+	width: 150px;
+	height: 25px;
+	background: red;
+	color:white;
+	border: none;
+	border-radius: 10px;
+	margin-bottom: 5px;
+	box-shadow: 10px 10px 5px 0px black;
+}
+#btnXO:hover{
+	background: #FF585B;
 }
 input[type=button]{
 	width: 130px;
@@ -68,4 +83,8 @@ input[type=button]:hover{
 }
 #restart:hover{
 	background: #FF585B;
+}
+#continer #item #radioO span{
+	color: blue;
+	font-size: 30px;
 }
