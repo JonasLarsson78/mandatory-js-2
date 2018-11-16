@@ -21,10 +21,9 @@ function onClick(e) {
 let element = e.target;
 xo(element);
 checkWinO();	
-checkWinX();	
+checkWinX();
 /* Kollar X vinst*/	
 function checkWinX(){
-	
 	
 	let vinstX = "Vinst till X !!";
 	
@@ -135,6 +134,13 @@ function disabled(){
 	for (let i = 0; i < myButtons.length; i++){
 		$(myButtons[i]).attr("disabled", "disabled");
 	}
+}
+
+function resetScore(){
+	scoreO = 0;
+	scoreX = 0;
+	$ (scoreXX).text(scoreX);
+	$ (scoreOO).text(scoreO);
 }
 
 let myButtons = document.querySelectorAll("input[type=button]");

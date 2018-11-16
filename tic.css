@@ -4,7 +4,6 @@
 	justify-content: center;
 }
 #item{
-	
 	text-align: center;
 }
 body{
@@ -14,6 +13,17 @@ body{
 p{
 	color: red;
 	font-size: 50px;
+	
+}
+#scoreReset{
+	width: 120px;
+	height: 40px;
+	background: red;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px 0px black;
+	cursor: pointer;
 	
 }
 span{
@@ -31,8 +41,8 @@ span{
 	font-size: 30px;
 }
 input[type=button]{
-	width: 150px;
-	height: 150px;
+	width: 130px;
+	height: 130px;
 	font-size: 100px;
 	margin-bottom: 5px;
 	background-color: green;
