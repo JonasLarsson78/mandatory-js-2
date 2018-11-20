@@ -14,7 +14,7 @@ let result = document.querySelector("#result");
 let scoreXX = document.querySelector("#scoreX");
 let scoreOO = document.querySelector("#scoreO");
 /* Vilket turn som börjar*/
-let turn = "";
+let turn = "X";
 
 let scoreO = 0;
 let scoreX = 0;
@@ -146,10 +146,10 @@ function resetScore(){
 }
 /* Väljer vem som börjar*/
 function begin(){
-	if (radioO.checked){
+	if (radioO.checked && btn1 === "" && btn2 === "" && btn3 === "" && btn4 === "" && btn5 === "" && btn6 === "" && btn7 === "" && btn8 === "" && btn9 === ""){
 		turn = "O";
 	}
-	else if (radioX.checked){
+	if (radioX.checked && btn1 === "" && btn2 === "" && btn3 === "" && btn4 === "" && btn5 === "" && btn6 === "" && btn7 === "" && btn8 === "" && btn9 === ""){
 		turn = "X";
 	}
 }
