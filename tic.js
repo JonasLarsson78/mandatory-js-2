@@ -146,10 +146,10 @@ function resetScore(){
 }
 /* Väljer vem som börjar*/
 function begin(){
-	if (radioO.checked && btn1 === "" && btn2 === "" && btn3 === "" && btn4 === "" && btn5 === "" && btn6 === "" && btn7 === "" && btn8 === "" && btn9 === ""){
+	if (radioO.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
 		turn = "O";
 	}
-	if (radioX.checked && btn1 === "" && btn2 === "" && btn3 === "" && btn4 === "" && btn5 === "" && btn6 === "" && btn7 === "" && btn8 === "" && btn9 === ""){
+	if (radioX.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
 		turn = "X";
 	}
 }
