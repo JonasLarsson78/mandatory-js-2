@@ -95,19 +95,19 @@ function checkWinO(){
 		winO();
 	}
 	else if (btn7.value === "O" && btn8.value === "O" && btn9.value === "O"){
-		blink(btn1); blink(btn2); blink(btn3);
+		blink(btn7); blink(btn8); blink(btn9);
 		winO();	
 	}
 	else if (btn1.value === "O" && btn4.value === "O" && btn7.value === "O"){
-		blink(btn1); blink(btn2); blink(btn3);
+		blink(btn1); blink(btn4); blink(btn7);
 		winO();	
 	}
 	else if (btn2.value === "O" && btn5.value === "O" && btn8.value === "O"){
-		blink(btn1); blink(btn2); blink(btn3);
+		blink(btn2); blink(btn5); blink(btn8);
 		winO();	
 	}
 	else if (btn3.value === "O" && btn6.value === "O" && btn9.value === "O"){
-		blink(btn1); blink(btn2); blink(btn3);
+		blink(btn3); blink(btn6); blink(btn9);
 		winO();	
 	}
 	else if (btn1.value === "O" && btn5.value === "O" && btn9.value === "O"){
