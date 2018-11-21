@@ -88,3 +88,8 @@ input[type=button]:hover{
 	color: blue;
 	font-size: 30px;
 }
+@keyframes blinker {
+ 50% {
+ opacity: 0;
+}
+}

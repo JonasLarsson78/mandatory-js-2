@@ -39,28 +39,36 @@ function checkWinX(){
 	}
 	
 	if (btn1.value === "X" && btn2.value === "X" && btn3.value === "X"){
-	winX();	
+		blink(btn1); blink(btn2); blink(btn3);
+		winX();	
 	}
 	else if (btn4.value === "X" && btn5.value === "X" && btn6.value === "X"){
-	winX();	
+		blink(btn4); blink(btn5); blink(btn6);
+		winX();	
 	}
 	else if (btn7.value === "X" && btn8.value === "X" && btn9.value === "X"){
-	winX();
+		blink(btn7); blink(btn8); blink(btn9);
+		winX();
 	}
 	else if (btn1.value === "X" && btn4.value === "X" && btn7.value === "X"){
-	winX();	
+		blink(btn1); blink(btn4); blink(btn7);
+		winX();	
 	}
 	else if (btn2.value === "X" && btn5.value === "X" && btn8.value === "X"){
-	winX();	
+		blink(btn2); blink(btn5); blink(btn8);
+		winX();	
 	}
 	else if (btn3.value === "X" && btn6.value === "X" && btn9.value === "X"){
-	winX();
+		blink(btn3); blink(btn6); blink(btn9);
+		winX();
 	}
 	else if (btn1.value === "X" && btn5.value === "X" && btn9.value === "X"){
-	winX();
+		blink(btn1); blink(btn5); blink(btn9);
+		winX();
 	}
 	else if (btn3.value === "X" && btn5.value === "X" && btn7.value === "X"){
-	winX();
+		blink(btn3); blink(btn5); blink(btn7);
+		winX();
 	}
 	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
 		$ (result).text("Ingen har vunnit.");
@@ -79,30 +87,37 @@ function checkWinO(){
 	}
 	
 	if (btn1.value === "O" && btn2.value === "O" && btn3.value === "O"){
-	winO();
+		blink(btn1); blink(btn2); blink(btn3); 
+		winO();
 	}
 	else if (btn4.value === "O" && btn5.value === "O" && btn6.value === "O"){
-	winO();
+		blink(btn4); blink(btn5); blink(btn6);
+		winO();
 	}
 	else if (btn7.value === "O" && btn8.value === "O" && btn9.value === "O"){
-	winO();	
+		blink(btn1); blink(btn2); blink(btn3);
+		winO();	
 	}
 	else if (btn1.value === "O" && btn4.value === "O" && btn7.value === "O"){
-	winO();	
+		blink(btn1); blink(btn2); blink(btn3);
+		winO();	
 	}
 	else if (btn2.value === "O" && btn5.value === "O" && btn8.value === "O"){
-	winO();	
+		blink(btn1); blink(btn2); blink(btn3);
+		winO();	
 	}
 	else if (btn3.value === "O" && btn6.value === "O" && btn9.value === "O"){
-	winO();	
+		blink(btn1); blink(btn2); blink(btn3);
+		winO();	
 	}
 	else if (btn1.value === "O" && btn5.value === "O" && btn9.value === "O"){
-	winO();	
+		blink(btn1); blink(btn5); blink(btn9);
+		winO();	
 	}
 	else if (btn3.value === "O" && btn5.value === "O" && btn7.value === "O"){
-	winO();
+		blink(btn3); blink(btn5); blink(btn7);
+		winO();
 	}
-	
 }		
 /* Varannan X - O och stylar*/	
 function xo(x){
@@ -117,7 +132,7 @@ function xo(x){
 		$(x).css("background-color", "blue");
 		turn = "X";
 	}
-}
+  }
 }
 /* Reset kanpp*/
 function newGame(){
@@ -129,6 +144,10 @@ function newGame(){
 	}
 	begin();
 	$ (result).text("Vem vinner ? X eller O.");
+	
+	noBlink(btn1); noBlink(btn2); noBlink(btn3);
+	noBlink(btn4); noBlink(btn5); noBlink(btn6); 
+	noBlink(btn7); noBlink(btn8); noBlink(btn9); 
 }
 /* Stänger av så man inte kan klicka på fler när någon vunit*/
 function disabled(){
@@ -152,6 +171,14 @@ function begin(){
 	if (radioX.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
 		turn = "X";
 	}
+}
+/* Gör att rätt rad blinkar*/
+function blink(id){
+	id.style.animation = "blinker 0.9s linear infinite";
+}
+/* Stänger av blink*/
+function noBlink(id){
+	id.style.animation = "";
 }
 
 let myButtons = document.querySelectorAll("input[type=button]");
