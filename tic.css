@@ -35,6 +35,9 @@ p{
 #scoreReset:hover{
 	background: #FF585B;
 }
+#scoreReset:focus{
+	outline: none;
+}
 span{
 	color: white;
 	font-size: 25px;
@@ -62,18 +65,22 @@ span{
 #btnXO:hover{
 	background: #FF585B;
 }
+#btnXO:focus{
+	outline: none;
+}
 input[type=button]{
 	width: 130px;
 	height: 130px;
-	font-size: 80px;
+	font-size: 100px;
 	margin-bottom: 5px;
 	background-color:#145E00;
 	color: white;
 	border: none;
 	border-radius: 10px;
-	font-family: 'Yenoh Brush';
+	font-family: 'Chelsea Market', cursive;
 	cursor: pointer;
 	text-shadow: 2px 2px black;
+	text-align: center;
 }
 input[type=button]:hover{
 	background-color: lightgreen;
@@ -100,6 +107,9 @@ input[type=button]:focus{
 }
 #restart:hover{
 	background: #FF585B;
+}
+#restart:focus{
+	outline: none;
 }
 #continer #item #radioO span{
 	color: blue;
