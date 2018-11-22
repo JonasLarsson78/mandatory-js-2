@@ -18,14 +18,15 @@ let turn = "X";
 
 let scoreO = 0;
 let scoreX = 0;
-
 begin();
+
 /*Kör spelet*/
 function onClick(e) {
 let element = e.target;
 xo(element);
 checkWinO();	
 checkWinX();
+	
 /* Kollar X vinst*/	
 function checkWinX(){
 	
@@ -73,7 +74,8 @@ function checkWinX(){
 	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
 		$ (result).text("Ingen har vunnit.");
 	}
-}	
+}
+	
 /* Kollar O vinst*/
 function checkWinO(){
 	
@@ -85,7 +87,6 @@ function checkWinO(){
 		$ (scoreOO).text(scoreO);
 		disabled();	
 	}
-	
 	if (btn1.value === "O" && btn2.value === "O" && btn3.value === "O"){
 		blink(btn1); blink(btn2); blink(btn3); 
 		winO();
@@ -118,22 +119,26 @@ function checkWinO(){
 		blink(btn3); blink(btn5); blink(btn7);
 		winO();
 	}
-}		
+}
+	
 /* Varannan X - O och stylar*/	
 function xo(x){
 		
 	if (x.value === " " && turn === "X"){
 		$(x).attr("value", turn);
-		$(x).css("background-color", "red");
+		$(x).css("background-color", "#222222");
+		$(x).css("color", "red");
 		turn = "O";
 	}
 	if (x.value === " " && turn === "O"){
 		$ (x).attr("value", turn);
-		$(x).css("background-color", "blue");
+		$(x).css("background-color", "#222222");
+		$(x).css("color", "blue");
 		turn = "X";
 	}
   }
 }
+
 /* Reset kanpp*/
 function newGame(){
 	let myButtons = document.querySelectorAll("input[type=button]");
@@ -149,13 +154,15 @@ function newGame(){
 	noBlink(btn4); noBlink(btn5); noBlink(btn6); 
 	noBlink(btn7); noBlink(btn8); noBlink(btn9); 
 }
-/* Stänger av så man inte kan klicka på fler när någon vunit*/
+
+/* Stänger av så man inte kan klicka på fler när någon vunnit*/
 function disabled(){
 	let myButtons = document.querySelectorAll("input[type=button]");
 	for (let i = 0; i < myButtons.length; i++){
 		$(myButtons[i]).attr("disabled", "disabled");
 	}
 }
+
 /* Nollsäller poäng*/
 function resetScore(){
 	scoreO = 0;
@@ -163,6 +170,7 @@ function resetScore(){
 	$ (scoreXX).text(scoreX);
 	$ (scoreOO).text(scoreO);
 }
+
 /* Väljer vem som börjar*/
 function begin(){
 	if (radioO.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
@@ -172,10 +180,12 @@ function begin(){
 		turn = "X";
 	}
 }
+
 /* Gör att rätt rad blinkar*/
 function blink(id){
 	id.style.animation = "blinker 0.9s linear infinite";
 }
+
 /* Stänger av blink*/
 function noBlink(id){
 	id.style.animation = "";
@@ -186,5 +196,6 @@ for (let i = 0; i < myButtons.length; i++){
 let myButton = myButtons[i];
 myButton.addEventListener("click", onClick);
 }
+
 let restart = document.querySelector("#restart");
 restart.addEventListener("click", newGame);
