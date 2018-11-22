@@ -71,7 +71,7 @@ input[type=button]{
 	color: white;
 	border: none;
 	border-radius: 10px;
-	font-family: "Yenoh Brush";
+	font-family: 'Yenoh Brush';
 	cursor: pointer;
 	text-shadow: 2px 2px black;
 }
