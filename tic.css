@@ -65,13 +65,13 @@ span{
 input[type=button]{
 	width: 130px;
 	height: 130px;
-	font-size: 100px;
+	font-size: 80px;
 	margin-bottom: 5px;
 	background-color:#145E00;
 	color: white;
 	border: none;
 	border-radius: 10px;
-	
+	font-family: "Yenoh Brush";
 	cursor: pointer;
 	text-shadow: 2px 2px black;
 }
