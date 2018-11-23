@@ -13,7 +13,7 @@ let radioO = document.querySelector("#radioO");
 let result = document.querySelector("#result");
 let scoreXX = document.querySelector("#scoreX");
 let scoreOO = document.querySelector("#scoreO");
-/* Vilket turn som börjar*/
+
 let turn = "X";
 
 let scoreO = 0;
@@ -24,102 +24,64 @@ begin();
 function onClick(e) {
 let element = e.target;
 xo(element);
-checkWinO();	
-checkWinX();
-	
-/* Kollar X vinst*/	
-function checkWinX(){
-	
-	let vinstX = "Vinst till X !!";
-	
-	function winX(){
-		$ (result).text(vinstX);
-		scoreX++;
-		$ (scoreXX).text(scoreX);
-		disabled();	
+    
+/* Kollar om vinst*/
+function checkWin(tr){
+       if (btn1.value === tr && btn2.value === tr && btn3.value === tr){
+		blink(btn1); blink(btn2); blink(btn3); 
+		win();
 	}
-	
-	if (btn1.value === "X" && btn2.value === "X" && btn3.value === "X"){
-		blink(btn1); blink(btn2); blink(btn3);
-		winX();	
-	}
-	else if (btn4.value === "X" && btn5.value === "X" && btn6.value === "X"){
+	else if (btn4.value === tr && btn5.value === tr && btn6.value === tr){
 		blink(btn4); blink(btn5); blink(btn6);
-		winX();	
+		win();
 	}
-	else if (btn7.value === "X" && btn8.value === "X" && btn9.value === "X"){
+	else if (btn7.value === tr && btn8.value === tr && btn9.value === tr){
 		blink(btn7); blink(btn8); blink(btn9);
-		winX();
+		win();	
 	}
-	else if (btn1.value === "X" && btn4.value === "X" && btn7.value === "X"){
+	else if (btn1.value === tr && btn4.value === tr && btn7.value === tr){
 		blink(btn1); blink(btn4); blink(btn7);
-		winX();	
+		win();	
 	}
-	else if (btn2.value === "X" && btn5.value === "X" && btn8.value === "X"){
+	else if (btn2.value === tr && btn5.value === tr && btn8.value === tr){
 		blink(btn2); blink(btn5); blink(btn8);
-		winX();	
+		win();	
 	}
-	else if (btn3.value === "X" && btn6.value === "X" && btn9.value === "X"){
+	else if (btn3.value === tr && btn6.value === tr && btn9.value === tr){
 		blink(btn3); blink(btn6); blink(btn9);
-		winX();
+		win();	
 	}
-	else if (btn1.value === "X" && btn5.value === "X" && btn9.value === "X"){
+	else if (btn1.value === tr && btn5.value === tr && btn9.value === tr){
 		blink(btn1); blink(btn5); blink(btn9);
-		winX();
+		win();	
 	}
-	else if (btn3.value === "X" && btn5.value === "X" && btn7.value === "X"){
+	else if (btn3.value === tr && btn5.value === tr && btn7.value === tr){
 		blink(btn3); blink(btn5); blink(btn7);
-		winX();
+		win();
 	}
-	else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
+    else if (btn1.value !== " " && btn2.value !== " " && btn3.value !== " " && btn4.value !== " " && btn5.value !== " " && btn6.value !== " " && btn7.value !== " " && btn8.value !== " " && btn9.value !== " "){
 		$ (result).text("Ingen har vunnit.");
-	}
+	} 
 }
-	
-/* Kollar O vinst*/
-function checkWinO(){
-	
-	let vinstY = "Vinst till O !!";
-	
-	function winO(){
-		$ (result).text(vinstY);
+/* Räknar poäng och tallar om vem som vinner*/    
+function win(){
+    
+    let vinstY = "Vinst till O !!";
+    let vinstX = "Vinst till X !!";   
+        
+    if (turn === "O"){
+       $ (result).text(vinstY);
 		scoreO++;
 		$ (scoreOO).text(scoreO);
-		disabled();	
-	}
-	if (btn1.value === "O" && btn2.value === "O" && btn3.value === "O"){
-		blink(btn1); blink(btn2); blink(btn3); 
-		winO();
-	}
-	else if (btn4.value === "O" && btn5.value === "O" && btn6.value === "O"){
-		blink(btn4); blink(btn5); blink(btn6);
-		winO();
-	}
-	else if (btn7.value === "O" && btn8.value === "O" && btn9.value === "O"){
-		blink(btn7); blink(btn8); blink(btn9);
-		winO();	
-	}
-	else if (btn1.value === "O" && btn4.value === "O" && btn7.value === "O"){
-		blink(btn1); blink(btn4); blink(btn7);
-		winO();	
-	}
-	else if (btn2.value === "O" && btn5.value === "O" && btn8.value === "O"){
-		blink(btn2); blink(btn5); blink(btn8);
-		winO();	
-	}
-	else if (btn3.value === "O" && btn6.value === "O" && btn9.value === "O"){
-		blink(btn3); blink(btn6); blink(btn9);
-		winO();	
-	}
-	else if (btn1.value === "O" && btn5.value === "O" && btn9.value === "O"){
-		blink(btn1); blink(btn5); blink(btn9);
-		winO();	
-	}
-	else if (btn3.value === "O" && btn5.value === "O" && btn7.value === "O"){
-		blink(btn3); blink(btn5); blink(btn7);
-		winO();
-	}
-}
+		disabled();	 
+    }
+    else if (turn === "X"){
+        $ (result).text(vinstX);
+		scoreX++;
+		$ (scoreXX).text(scoreX);
+		disabled();
+    }
+}	
 	
 /* Varannan X - O och stylar*/	
 function xo(x){
@@ -129,12 +91,15 @@ function xo(x){
 		$(x).css("background-color", "#222222");
 		$(x).css("color", "red");
 		turn = "O";
+        checkWin("X");
+        
 	}
-	if (x.value === " " && turn === "O"){
-		$ (x).attr("value", turn);
+	else if (x.value === " " && turn === "O"){
+		$(x).attr("value", turn);
 		$(x).css("background-color", "#222222");
 		$(x).css("color", "blue");
 		turn = "X";
+        checkWin("O"); 
 	}
   }
 }
@@ -143,13 +108,13 @@ function xo(x){
 function newGame(){
 	let myButtons = document.querySelectorAll("input[type=button]");
 	for (let i = 0; i < myButtons.length; i++){
-		$(myButtons[i]).attr("value", " ");
-		$(myButtons[i]).css("background-color", "");
-		$(myButtons[i]).removeAttr("disabled");
+        let button = myButtons[i];
+		$(button).attr("value", " ");
+		$(button).css("background-color", "");
+		$(button).removeAttr("disabled");
 	}
 	begin();
 	$ (result).text("Vem vinner ? X eller O.");
-	
 	noBlink(btn1); noBlink(btn2); noBlink(btn3);
 	noBlink(btn4); noBlink(btn5); noBlink(btn6); 
 	noBlink(btn7); noBlink(btn8); noBlink(btn9); 
@@ -174,7 +139,7 @@ function resetScore(){
 /* Väljer vem som börjar*/
 function begin(){
 	if (radioO.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
-		turn = "O";
+		turn = "O"; 
 	}
 	if (radioX.checked && btn1.value === " " && btn2.value === " " && btn3.value === " " && btn4.value === " " && btn5.value === " " && btn6.value === " " && btn7.value === " " && btn8.value === " " && btn9.value === " "){
 		turn = "X";
@@ -199,3 +164,5 @@ myButton.addEventListener("click", onClick);
 
 let restart = document.querySelector("#restart");
 restart.addEventListener("click", newGame);
+
+
