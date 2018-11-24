@@ -66,16 +66,16 @@ function checkWin(tr){
 /* Räknar poäng och tallar om vem som vinner*/    
 function win(){
     
-    let vinstY = "Vinst till O !!";
+    let vinstO = "Vinst till O !!";
     let vinstX = "Vinst till X !!";   
         
-    if (turn === "O"){
-       $ (result).text(vinstY);
+    if (turn === "X"){
+       $ (result).text(vinstO);
 		scoreO++;
 		$ (scoreOO).text(scoreO);
 		disabled();	 
     }
-    else if (turn === "X"){
+    else if (turn === "O"){
         $ (result).text(vinstX);
 		scoreX++;
 		$ (scoreXX).text(scoreX);
