@@ -4,6 +4,7 @@
 	justify-content: center;
 }
 #item{
+    position: relative;
 	margin-top: 10px;
 	text-align: center;
 	width: 550px;
@@ -118,4 +119,86 @@ input[type=button]:focus{
  50% {
  opacity: 0;
  }
+}
+#strike1{
+    position: absolute;
+    left: 80px;
+    top: 230px;
+    width: 390px;
+    height: 10px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike2{
+    position: absolute;
+    left: 80px;
+    top: 364px;
+    width: 390px;
+    height: 10px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike3{
+    position: absolute;
+    left: 80px;
+    top: 498px;
+    width: 390px;
+    height: 10px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike4{
+    position: absolute;
+    left: 137px;
+    top: 175px;
+    width: 10px;
+    height: 390px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike5{
+    position: absolute;
+    left: 270px;
+    top: 175px;
+    width: 10px;
+    height: 390px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike6{
+    position: absolute;
+    left: 400px;
+    top: 175px;
+    width: 10px;
+    height: 390px;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+#strike8{
+    position: absolute;
+    left: 267px;
+    top: 174px;
+    width: 15px;
+    height: 390px;
+    
+    transform: skewX(-45deg);
+    z-index: 1;
+    visibility: hidden;
+}
+#strike7{
+    position: absolute;
+    left: 267px;
+    top: 174px;
+    width: 15px;
+    height: 390px;
+    background-color: transparent;
+    transform: skewX(45deg);
+    z-index: 1;
+    visibility: hidden;
 }
